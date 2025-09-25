@@ -53,7 +53,7 @@ return [
                 'route'    => 'career',
                 'icon'     => 'icon-stack-text',
                 'submenu'  => [],
-                'childs'   => ['position-entry'],
+                'childs'   => ['career-entry'],
                 'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
             ],
         ],

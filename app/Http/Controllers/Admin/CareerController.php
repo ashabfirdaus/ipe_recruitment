@@ -9,10 +9,10 @@ class CareerController extends CoreController
 {
     public function __construct()
     {
-        $this->parent         = 'carrer';
+        $this->parent         = 'career';
         $this->model          = Careers::class;
         $this->notupdate      = [];
-        $this->entryName      = 'carrer-entry';
+        $this->entryName      = 'career-entry';
         $this->checkRouteName = request()->route()->getName();
     }
 
@@ -69,5 +69,16 @@ class CareerController extends CoreController
         ];
 
         return $paramValidate;
+    }
+
+    public function beforeProcess($request, $id)
+    {
+        $slug      = $request->slug;
+        $checkSlug = $this->model::where('slug', $slug)->first();
+        if ($checkSlug) {
+            return ['status' => 'error', 'message' => 'Slug lowongan sama dengan yang sudah ada'];
+        }
+
+        return ['status' => 'success'];
     }
 }
