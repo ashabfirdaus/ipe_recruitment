@@ -39,6 +39,17 @@ class ApplicantAccountController extends CoreController
         return setView('admin', 'index-tes', $view, $array);
     }
 
+    public function queryForMainPage($request, $config)
+    {
+        $query = User::select('users.*', 'roles.role_name')
+            ->join('roles', 'users.role_id', 'roles.id')
+            ->where('role_id', 3);
+        $query = $this->filterQuery($query, $request, $config);
+        $query = $this->orderByQuery($query, $request, $config);
+
+        return $query;
+    }
+
     public function customColumnDatatable($request, $datatable, $config)
     {
         $datatable = $datatable->editColumn('status', function ($row) {
