@@ -1,0 +1,152 @@
+<?php
+
+return [
+    [
+        'label'    => 'Dashboard',
+        'route'    => 'dashboard',
+        'icon'     => 'icon-home4',
+        'submenu'  => [],
+        'childs'   => [],
+        'activity' => ['read'],
+    ], [
+        'label'   => 'Akses',
+        'route'   => 'access',
+        'icon'    => 'icon-accessibility2',
+        'submenu' => [
+            [
+                'label'    => 'Akun',
+                'route'    => 'account',
+                'icon'     => 'icon-user',
+                'submenu'  => [],
+                'childs'   => ['account-entry', 'account-trace'],
+                'activity' => ['read', 'create', 'edit', 'delete', 'reset_password', 'trace'],
+            ], [
+                'label'    => 'Peran',
+                'route'    => 'role',
+                'icon'     => 'icon-accessibility',
+                'param'    => [],
+                'childs'   => ['role-entry', 'role-trace'],
+                'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
+            ],
+        ],
+    ], [
+        'label'   => 'Master',
+        'route'   => 'master',
+        'icon'    => 'icon-stack2',
+        'submenu' => [
+            [
+                'label'    => 'Soal DISC',
+                'route'    => 'disc',
+                'icon'     => 'icon-stack-text',
+                'submenu'  => [],
+                'childs'   => ['disc-entry', 'disc-trace'],
+                'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
+            ], [
+                'label'    => 'Soal IQ',
+                'route'    => 'iq',
+                'icon'     => 'icon-stack-text',
+                'submenu'  => [],
+                'childs'   => ['iq-entry', 'iq-trace'],
+                'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
+            ], [
+                'label'    => 'Lowongan',
+                'route'    => 'career',
+                'icon'     => 'icon-stack-text',
+                'submenu'  => [],
+                'childs'   => ['position-entry'],
+                'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
+            ],
+        ],
+    ], [
+        'label'    => 'Akun Pelamar',
+        'route'    => 'applicant_account',
+        'icon'     => 'icon-users',
+        'submenu'  => [],
+        'childs'   => ['applicant_account-entry', 'applicant_account-trace'],
+        'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
+    ], [
+        'label'    => 'Data Hasil Pelamar',
+        'route'    => 'applicant',
+        'icon'     => 'icon-file-check',
+        'submenu'  => [],
+        'childs'   => ['applicant-entry', 'applicant-trace', 'applicant-history', 'applicant-entry-result'],
+        'activity' => ['read', 'edit', 'delete', 'trace'],
+    ], [
+        'label'   => 'Pustaka Media',
+        'route'   => 'media-library',
+        'icon'    => 'icon-media',
+        'submenu' => [
+            [
+                'label'    => 'Gambar',
+                'route'    => 'image',
+                'icon'     => 'icon-image3',
+                'param'    => ['type' => 'image'],
+                'childs'   => [],
+                'activity' => ['read', 'create', 'delete'],
+            ], [
+                'label'    => 'Video',
+                'route'    => 'video',
+                'icon'     => 'icon-video-camera',
+                'param'    => ['type' => 'video'],
+                'childs'   => [],
+                'activity' => ['read', 'create', 'delete'],
+            ], [
+                'label'    => 'File',
+                'route'    => 'application',
+                'icon'     => 'icon-file-text',
+                'param'    => ['type' => 'application'],
+                'childs'   => [],
+                'activity' => ['read', 'create', 'delete'],
+            ], [
+                'label'    => 'Audio',
+                'route'    => 'audio',
+                'icon'     => 'icon-music',
+                'param'    => ['type' => 'audio'],
+                'childs'   => [],
+                'activity' => ['read', 'create', 'delete'],
+            ],
+        ],
+    ], [
+        'label'   => 'Pengaturan',
+        'route'   => 'setting',
+        'icon'    => 'icon-gear',
+        'submenu' => [
+            [
+                'label'    => 'Deskripsi Situs',
+                'route'    => 'desc-site',
+                'icon'     => 'icon-file-text2',
+                'param'    => [],
+                'childs'   => [],
+                'activity' => ['read', 'edit'],
+            ], [
+                'label'    => 'Multi Bahasa',
+                'route'    => 'multi-lang',
+                'icon'     => 'icon-file-text2',
+                'param'    => [],
+                'childs'   => [],
+                'activity' => ['read', 'edit'],
+            ], [
+                'label'    => 'Profil',
+                'route'    => 'profil',
+                'icon'     => 'icon-user',
+                'param'    => [],
+                'childs'   => [],
+                'activity' => ['read', 'create', 'edit', 'delete'],
+            ], [
+                'label'    => 'Penanganan Gambar',
+                'route'    => 'handle_image',
+                'icon'     => 'icon-crop2',
+                'param'    => [],
+                'childs'   => ['handle_image-entry', 'handle_image-trace'],
+                'activity' => ['read', 'create', 'edit', 'delete', 'trace'],
+            ], [
+                'label'    => 'Log',
+                'route'    => 'log',
+                'icon'     => 'icon-crop2',
+                'param'    => [],
+                'childs'   => [],
+                'activity' => ['read'],
+            ],
+        ],
+    ],
+];
