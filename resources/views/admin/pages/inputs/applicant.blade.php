@@ -97,7 +97,7 @@
                         class="btn btn-info me-change-validation" id="btn_kirim_email"><i
                             class="icon-envelope position-left"></i>Kirim Email Test Online</a>
                     <a href="{{ route('accept-applicant', $data->id) }}"
-                        data-validation-msg="Terima kandidat ini sebagai bagian dari sinar cemara mas abadi?"
+                        data-validation-msg="Terima kandidat ini sebagai bagian dari Inti Pangan Ekatama?"
                         class="btn btn-success me-change-validation" id="terima_kandidat"><i
                             class="icon-check position-left"></i>Kandidat Di Terima</a>
                     <a href="javascript:void(0)" class="btn btn-default modal-switch-position">

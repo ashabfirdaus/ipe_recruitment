@@ -50,7 +50,8 @@ class AccountController extends CoreController
     public function queryForMainPage($request, $config)
     {
         $query = User::select('users.*', 'roles.role_name')
-            ->leftJoin('roles', 'users.role_id', 'roles.id');
+            ->leftJoin('roles', 'users.role_id', 'roles.id')
+            ->where('role_id', '!=', 3);
         $query = $this->filterQuery($query, $request, $config);
         $query = $this->orderByQuery($query, $request, $config);
 
@@ -99,21 +100,16 @@ class AccountController extends CoreController
     {
         if ($id == 0) {
             $paramValidate = [
-                'name'     => 'required',
-                'username' => 'required|unique:users,username',
-                // 'email' => 'unique:users,email',
+                'name'     => 'required|unique:users,name',
                 'password' => 'required|string|confirmed',
                 'role_id'  => 'required',
                 'status'   => 'required',
-                // 'phone' => 'required|unique:users,phone',
             ];
         } else {
             $paramValidate = [
-                'name'     => 'required',
-                'username' => 'required|unique:users,username,' . $id,
-                // 'email' => 'unique:users,email,'.$id,
-                'role_id'  => 'required',
-                'status'   => 'required',
+                'name'    => 'required|unique:users,name,' . $id,
+                'role_id' => 'required',
+                'status'  => 'required',
             ];
         }
 
@@ -124,7 +120,6 @@ class AccountController extends CoreController
     {
         $data             = $req->all();
         $data['password'] = bcrypt($req->password);
-        $data['phone']    = (int) $req->phone;
         if ($id != 0) {
             $data = $req->except($this->notupdate);
         }

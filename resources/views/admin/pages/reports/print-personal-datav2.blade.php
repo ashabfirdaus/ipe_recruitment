@@ -836,20 +836,20 @@
         <table class="table table-header">
             <tr>
                 <td rowspan="3" style="width:150px;text-align:center;">
-                    <img src="{{ asset('img/logo_light.png') }}" alt="" style="width:75px;">
+                    <img src="{{ asset('img/logo_light.png') }}" alt="" style="width:120px;">
                 </td>
-                <td class="center" style="font-size:15px;">PT. SINAR CEMARAMAS ABADI</td>
+                <td class="center" style="font-size:15px;">PT. INTI PANGAN EKATAMA</td>
                 <td style="width:87px;" class="clear-border-right">No. Dokumen </td>
-                <td style="width:100px;">: FR-HRGA-02</td>
+                <td style="width:100px;">: </td>
             </tr>
             <tr>
                 <td rowspan="2" class="center" style="font-size:20px;">FORMULIR DATA PELAMAR</td>
                 <td class="clear-border-right">Revisi </td>
-                <td>: 00</td>
+                <td>: </td>
             </tr>
             <tr>
                 <td class="clear-border-right">Tgl. Berlaku </td>
-                <td>: 3 Juni 2024</td>
+                <td>: </td>
             </tr>
         </table>
     </div>

@@ -207,7 +207,7 @@
 
                                             <p style="color:black;line-height: 1.5rem;font-size: 18px !important">
                                                 Salam,<br>
-                                                PT Sinar Cemaramas Abadi<br>
+                                                PT Inti Pangan Ekatama<br>
                                             </p>
                                         </td>
                                     </tr>
@@ -239,8 +239,8 @@
                                     <tr>
                                         <td width="640" style="position: relative" class="wrapper">
                                             <br>
-                                            <img src="https://recruitment.ptscma.co.id/img/31tahun.jpeg" width="640"
-                                                height="500"
+                                            <img src="https://recruitment.ptscma.co.id/img/31tahun.jpeg"
+                                                width="640" height="500"
                                                 style="margin:0; padding:0; border:none; object-fit: cover"
                                                 border="0" class="imgClass" alt="" />
                                         </td>
@@ -295,7 +295,7 @@
                                                 <tr>
                                                     <td class="text-footer1 pb10"
                                                         style="color:#999999; font-family:'Lato', Arial,sans-serif; font-size:14px; line-height:20px; text-align:center; padding-bottom:10px;">
-                                                        <div mc:edit="text_44">PT Sinar Cemara Mas Abadi
+                                                        <div mc:edit="text_44">PT Inti Pangan Ekatama
                                                         </div>
                                                     </td>
                                                 </tr>

@@ -115,6 +115,18 @@ class ApplicantAccountController extends CoreController
             $data = $req->except($this->notupdate);
         }
 
+        if ($req->personal_data == '0') {
+            $data['personal_data_date'] = null;
+        }
+
+        if ($req->disc == '0') {
+            $data['disc_date'] = null;
+        }
+
+        if ($req->iq == '0') {
+            $data['iq_date'] = null;
+        }
+
         return $data;
     }
 

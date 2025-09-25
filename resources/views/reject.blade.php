@@ -186,7 +186,7 @@
                                             </p>
                                             <p style="color:black;line-height: 1.5rem;font-size: 18px !important">
                                                 Terima kasih atas kesabaran Anda dan telah meluangkan waktu untuk
-                                                bergabung dengan PT. Sinar Cemaramas Abadi.
+                                                bergabung dengan PT. Inti Pangan Ekatama.
                                             </p>
                                             <p style="color:black;line-height: 1.5rem;font-size: 18px !important">
                                                 Berdasarkan hasil evaluasi yang telah dilakukan terhadap setiap proses
@@ -200,7 +200,7 @@
 
                                             <p style="color:black;line-height: 1.5rem;font-size: 18px !important">
                                                 Sekali lagi, terima kasih atas ketertarikan Anda pada perusahaan kami,
-                                                PT. Sinar Cemaramas Abadi. Kami harap Anda tetap antusias dengan
+                                                PT. Inti Pangan Ekatama. Kami harap Anda tetap antusias dengan
                                                 perusahaan kami. Kami mendorong Anda untuk tetap up-to-date dengan
                                                 lowongan terbaru dan melamar pekerjaan lain yang relevan di masa
                                                 mendatang. Semoga Anda mendapatkan yang terbaik untuk usaha Anda di masa
@@ -209,7 +209,7 @@
                                             <p style="color:black;line-height: 1.5rem;font-size: 18px !important">
                                                 Semoga Sukses & Salam,<br>
                                                 Rekrutmen Tim<br>
-                                                PT Sinar Cemaramas Abadi<br>
+                                                PT Inti Pangan Ekatama<br>
                                             </p>
                                         </td>
                                     </tr>
@@ -293,7 +293,7 @@
                                                 <tr>
                                                     <td class="text-footer1 pb10"
                                                         style="color:#999999; font-family:'Lato', Arial,sans-serif; font-size:18px; line-height:20px; text-align:center; padding-bottom:10px;">
-                                                        <div mc:edit="text_44">PT Sinar Cemara Mas Abadi
+                                                        <div mc:edit="text_44">PT Inti Pangan Ekatama
                                                         </div>
                                                     </td>
                                                 </tr>

@@ -1,8 +1,6 @@
 <?php
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\Master\Media;
 use App\Models\Master\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,12 +14,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'username',
-        'address',
         'role_id',
-        'media_id',
-        'signature',
         'status',
+        'personal_data',
+        'disc',
+        'iq',
+        'personal_data_date',
+        'disc_date',
+        'iq_date',
+        'start_date',
+        'minute_time_diff',
     ];
 
     protected $hidden = [
@@ -42,13 +44,14 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function media()
+    public function logs()
     {
-        return $this->belongsTo(Media::class);
+        return $this->hasMany(Log::class, 'target_id')->where('tables', 'users');
     }
 
-    public function signatureImage()
+    public function personalData()
     {
-        return $this->belongsTo(Media::class, 'signature');
+        $this->hasOne(PersonalData::class, 'id', 'user_id');
     }
+
 }

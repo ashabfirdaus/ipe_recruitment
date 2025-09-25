@@ -8,7 +8,7 @@
 
     <title>{{ $title }}</title>
     <meta content="{{ $desc }}" name="description">
-    <meta content="sca,sinar cemaramas abadi,sinar,cemaramas,abadi,recruitment,scma" name="keywords">
+    <meta content="ipe,inti pangan ekatama,inti,pangan,ekatama,recruitment" name="keywords">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="{{ $title }}">

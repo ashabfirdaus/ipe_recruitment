@@ -1,8 +1,8 @@
 <div class="page-header page-header-default">
     <div class="page-header-content">
         <div class="page-title">
-            <h4><i class="{{ getAttributPage($menu,request()->route()->getName(),'icon') }} position-left"></i> <span
-                    class="text-semibold">{{ getAttributPage($menu,request()->route()->getName(),'label') }}</span></h4>
+            <h4><i class="{{ getAttributPage($menu, request()->route()->getName(), 'icon') }} position-left"></i> <span
+                    class="text-semibold">{{ getAttributPage($menu, request()->route()->getName(), 'label') }}</span></h4>
         </div>
     </div>
 </div>
@@ -10,7 +10,7 @@
     <div class="panel panel-flat">
         <div class="panel-heading">
             <h5 class="panel-title">{{ $data ? 'Edit' : 'Tambah' }}
-                {{ getAttributPage($menu,request()->route()->getName(),'label') }}</h5>
+                {{ getAttributPage($menu, request()->route()->getName(), 'label') }}</h5>
         </div>
         <div class="panel-body">
             <form class="form-horizontal post-action" action="{{ route('applicant_account-save', id_exist($data)) }}"
@@ -34,6 +34,49 @@
                                         Tidak Aktif</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 control-label">Mulai Tes <span class="required">*</span></label>
+                            <div class="col-md-5 form-group">
+                                <input type="datetime-local" name="start_date" class="form-control"
+                                    value="{{ val_exist($data, 'start_date') ? date('Y-m-d\TH:i:s', strtotime(val_exist($data, 'start_date'))) : '' }}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 control-label">Data Diri </label>
+                            <div class="col-md-5 form-group">
+                                <select name="personal_data" class="form-control">
+                                    <option value="0"
+                                        {{ val_exist($data, 'personal_data') == '0' ? 'selected' : '' }}>Belum</option>
+                                    <option value="1"
+                                        {{ val_exist($data, 'personal_data') == '1' ? 'selected' : '' }}>Sudah</option>
+                                </select>
+                            </div>
+                            <label class="col-md-3">{{ val_exist($data, 'personal_data_date') }}</label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 control-label">Tes Kepribadian </label>
+                            <div class="col-md-5 form-group">
+                                <select name="disc" class="form-control">
+                                    <option value="0" {{ val_exist($data, 'disc') == '0' ? 'selected' : '' }}>Belum
+                                    </option>
+                                    <option value="1" {{ val_exist($data, 'disc') == '1' ? 'selected' : '' }}>Sudah
+                                    </option>
+                                </select>
+                            </div>
+                            <label class="col-md-3">{{ val_exist($data, 'disc_date') }}</label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 control-label">Tes IQ </label>
+                            <div class="col-md-5 form-group">
+                                <select name="iq" class="form-control">
+                                    <option value="0" {{ val_exist($data, 'iq') == '0' ? 'selected' : '' }}>Belum
+                                    </option>
+                                    <option value="1" {{ val_exist($data, 'iq') == '1' ? 'selected' : '' }}>Sudah
+                                    </option>
+                                </select>
+                            </div>
+                            <label class="col-md-3">{{ val_exist($data, 'iq_date') }}</label>
                         </div>
                         {{-- <div class="row">
                             <label class="col-md-3 control-label">Mulai Tes <span class="required">*</span></label>
@@ -64,8 +107,7 @@
                 <div class="text-right">
                     <input type="hidden" name="addresses">
                     <input type="hidden" name="role_id" value="3">
-                    @if (getRoleUser(request()->route()->getName(),
-                            'reset_password') && id_exist($data))
+                    @if (getRoleUser(request()->route()->getName(), 'reset_password') && id_exist($data))
                         <a href="{{ route('applicant_account-reset', id_exist($data)) }}"
                             class="btn btn-warning me-change"><i class="icon-reset position-left"></i> Reset
                             Password</a>

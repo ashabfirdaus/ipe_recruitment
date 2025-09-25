@@ -25,13 +25,6 @@
                             <label class="col-md-3 control-label">Nama <span class="required">*</span></label>
                             <div class="col-md-9 form-group">
                                 <input type="text" name="name" value="{{ val_exist($data, 'name') }}"
-                                    class="form-control input-capital">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label class="col-md-3 control-label">Username <span class="required">*</span></label>
-                            <div class="col-md-9 form-group">
-                                <input type="text" name="username" value="{{ val_exist($data, 'username') }}"
                                     class="form-control">
                             </div>
                         </div>
@@ -48,25 +41,8 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row">
-                            <label class="col-md-3 control-label">Status <span class="required">*</span></label>
-                            <div class="col-md-4 form-group">
-                                <select class="form-control select2" name="status">
-                                    <option value="1" {{ val_exist($data, 'status') == '1' ? 'selected' : '' }}>
-                                        Aktif</option>
-                                    <option value="0" {{ val_exist($data, 'status') == '0' ? 'selected' : '' }}>
-                                        Tidak Aktif</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-md-6">
-                        {{-- <div class="row">
-                            <label class="col-md-3 control-label">Telepon <span class="required">*</span></label>
-                            <div class="col-md-9 form-group">
-                                <input name="phone" value="{{ val_exist($data, 'phone') }}" class="form-control">
-                            </div>
-                        </div> --}}
                         @if (id_exist($data) == 0)
                             <div class="row">
                                 <label class="col-md-3 control-label">Password <span class="required">*</span></label>
@@ -84,47 +60,18 @@
                             </div>
                         @endif
                         <div class="row">
-                            <label class="col-md-3 control-label">Foto</label>
-                            <div class="col-md-9 form-group parent-media" style="display: flex;">
-                                <img src="{{ asset(val_exist_object($data, 'media', 'path', 'img/placeholder.jpg', 'mini')) }}"
-                                    width="100" height="100" style="margin-right:20px;border:1px solid #dddddd;">
-                                <div class="input-group not-img" style="margin-top: 10px;">
-                                    <input type="text" name="media_id" class="attr-id form-control"
-                                        value="{{ val_exist($data, 'media_id') }}" readonly="">
-                                    <div class="input-group-btn">
-                                        <a href="javascript:void(0)" class="btn btn-default remove-media-container"
-                                            style="{{ val_exist($data, 'media_id') ? 'display: block' : 'display: none' }}">Hapus</a>
-                                        <a href="javascript:void(0)" data-url="{{ route('get-modal-media', 'image') }}"
-                                            class="btn btn-default add-media-container"
-                                            style="{{ val_exist($data, 'media_id') ? 'display: none' : 'display: block' }}">Tambah
-                                            Media</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label class="col-md-3 control-label">Tanga Tangan</label>
-                            <div class="col-md-9 form-group parent-media" style="display: flex;">
-                                <img src="{{ asset(val_exist_object($data, 'signatureImage', 'path', 'img/placeholder.jpg', 'mini')) }}"
-                                    width="100" height="100" style="margin-right:20px;border:1px solid #dddddd;">
-                                <div class="input-group not-img" style="margin-top: 10px;">
-                                    <input type="text" name="signature" class="attr-id form-control"
-                                        value="{{ val_exist($data, 'signature') }}" readonly="">
-                                    <div class="input-group-btn">
-                                        <a href="javascript:void(0)" class="btn btn-default remove-media-container"
-                                            style="{{ val_exist($data, 'signature') ? 'display: block' : 'display: none' }}">Hapus</a>
-                                        <a href="javascript:void(0)"
-                                            data-url="{{ route('get-modal-media', 'image') }}"
-                                            class="btn btn-default add-media-container"
-                                            style="{{ val_exist($data, 'signature') ? 'display: none' : 'display: block' }}">Tambah
-                                            Media</a>
-                                    </div>
-                                </div>
+                            <label class="col-md-3 control-label">Status <span class="required">*</span></label>
+                            <div class="col-md-4 form-group">
+                                <select class="form-control select2" name="status">
+                                    <option value="1" {{ val_exist($data, 'status') == '1' ? 'selected' : '' }}>
+                                        Aktif</option>
+                                    <option value="0" {{ val_exist($data, 'status') == '0' ? 'selected' : '' }}>
+                                        Tidak Aktif</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="text-right">
                     <input type="hidden" name="addresses">
                     @if (getRoleUser(request()->route()->getName(), 'reset_password') && id_exist($data))

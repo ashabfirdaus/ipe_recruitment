@@ -783,7 +783,7 @@ class ApplicantController extends CoreController
 
             return response()->json([
                 'status'  => 'success',
-                'message' => "Berhasil menerima kandidat ini sebagai bagian dari sinar cemara mas abadi",
+                'message' => "Berhasil menerima kandidat ini sebagai bagian dari PT. Inti Pangan Ekatama",
             ]);
         });
     }
