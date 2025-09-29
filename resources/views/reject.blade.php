@@ -150,11 +150,11 @@
                                 <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
                                     <tr>
                                         <td align="center" valign="top">
-                                            <img src="https://recruitment.ptscma.co.id/img/logo-complete.png"
+                                            <img src="https://recruitment.intipangan.com/img/logo-complete.png"
                                                 height="100" style="margin:0; padding:0; border:none;" border="0"
                                                 class="img darkLogo" alt="">
 
-                                            <img src="https://ptscma.co.id/img/putih.png" height="100"
+                                            <img src="https://intipangan.com/img/putih.png" height="100"
                                                 style="margin:0; padding:0; border:none;" border="0"
                                                 class="img lightLogo" alt="">
                                         </td>
@@ -237,8 +237,8 @@
                                     <tr>
                                         <td width="640" style="position: relative" class="wrapper">
                                             <br>
-                                            <img src="https://recruitment.ptscma.co.id/img/31tahun.jpeg" width="640"
-                                                height="500"
+                                            <img src="https://recruitment.intipangan.com/img/31tahun.jpeg"
+                                                width="640" height="500"
                                                 style="margin:0; padding:0; border:none; object-fit: cover"
                                                 border="0" class="imgClass" alt="" />
                                         </td>
@@ -263,7 +263,7 @@
                                                             <tr>
                                                                 <td class="img"
                                                                     style="font-size:0pt; line-height:0pt; text-align:center;">
-                                                                    <a href="https://www.facebook.com/sca.sda/"
+                                                                    {{-- <a href="https://www.facebook.com/sca.sda/"
                                                                         target="https://www.facebook.com/sca.sda/"><img
                                                                             src="https://jpmexpress.co.id/storage/assets/png/t7_ico_facebook.jpg"
                                                                             width="34" height="34"
@@ -284,7 +284,7 @@
                                                                             width="34" height="34"
                                                                             mc:edit="image_26"
                                                                             style="max-width:34px;margin-right: 0.5rem"
-                                                                            border="0" alt="" /></a>
+                                                                            border="0" alt="" /></a> --}}
                                                                 </td>
                                                             </tr>
                                                         </table>

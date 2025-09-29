@@ -150,13 +150,13 @@
                                 <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
                                     <tr>
                                         <td align="center" valign="top">
-                                            <img src="https://recruitment.ptscma.co.id/img/logo-complete.png"
+                                            {{-- <img src="https://recruitment.intipangan.com/img/logo-complete.png"
                                                 height="100" style="margin:0; padding:0; border:none;" border="0"
                                                 class="img darkLogo" alt="">
 
                                             <img src="https://ptscma.co.id/img/putih.png" height="100"
                                                 style="margin:0; padding:0; border:none;" border="0"
-                                                class="img lightLogo" alt="">
+                                                class="img lightLogo" alt=""> --}}
                                         </td>
                                     </tr>
                                 </table>
@@ -195,7 +195,7 @@
                                             <p style="color:black;line-height: 1.5rem;font-size: 18px !important">
                                                 Sementara itu, jangan ragu untuk mempelajari lebih lanjut tentang
                                                 perusahaan kami di <a style="color: blue"
-                                                    href="https://ptscma.co.id">sini</a> untuk
+                                                    href="https://intipangan.com">sini</a> untuk
                                                 mengetahui lebih
                                                 banyak tentang kami.
                                             </p>
@@ -239,7 +239,7 @@
                                     <tr>
                                         <td width="640" style="position: relative" class="wrapper">
                                             <br>
-                                            <img src="https://recruitment.ptscma.co.id/img/31tahun.jpeg"
+                                            <img src="https://recruitment.intipangan.com/img/31tahun.jpeg"
                                                 width="640" height="500"
                                                 style="margin:0; padding:0; border:none; object-fit: cover"
                                                 border="0" class="imgClass" alt="" />
@@ -309,7 +309,7 @@
                                                 <tr>
                                                     <td class="text-footer2"
                                                         style="color:#999999; font-family:'Lato', Arial,sans-serif; font-size:12px; line-height:26px; text-align:center;">
-                                                        <img src="https://recruitment.ptscma.co.id/img/favicon.png"
+                                                        <img src="https://recruitment.intipangan.com/img/favicon.png"
                                                             style="margin:0; padding:0; border:none; display:inline;width: 50px !important;"
                                                             border="0" class="img" alt="">
                                                     </td>

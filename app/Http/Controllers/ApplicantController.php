@@ -177,7 +177,7 @@ class ApplicantController extends Controller
             if ($personal->official_photo) {
                 $opPath = explode('.', $personal->official_photo);
                 if (file_exists(public_path($personal->official_photo))) {
-                    $opBase64 = base64_encode(file_get_contents(asset($personal->official_photo)));
+                    $opBase64 = base64_encode(file_get_contents(public_path($personal->official_photo)));
                     $opRes    = 'data:image/' . $opPath[1] . ';base64,' . $opBase64;
                 }
             }
@@ -185,7 +185,7 @@ class ApplicantController extends Controller
             if ($personal->latest_cv) {
                 $lcPath = explode('.', $personal->latest_cv);
                 if (file_exists(public_path($personal->latest_cv))) {
-                    $lcBase64 = base64_encode(file_get_contents(asset($personal->latest_cv)));
+                    $lcBase64 = base64_encode(file_get_contents(public_path($personal->latest_cv)));
                     $lcRes    = 'data:image/' . $lcPath[1] . ';base64,' . $lcBase64;
                 }
             }
@@ -193,7 +193,7 @@ class ApplicantController extends Controller
             if ($personal->letter_of_reference) {
                 $lorPath = explode('.', $personal->letter_of_reference);
                 if (file_exists(public_path($personal->letter_of_reference))) {
-                    $lorBase64 = base64_encode(file_get_contents(asset($personal->letter_of_reference)));
+                    $lorBase64 = base64_encode(file_get_contents(public_path($personal->letter_of_reference)));
                     $lorRes    = 'data:image/' . $lorPath[1] . ';base64,' . $lorBase64;
                 }
             }
@@ -224,7 +224,7 @@ class ApplicantController extends Controller
             'LINKEDIN',
             'LOKER.ID',
             'INDEED',
-            'INSTAGRAM SCMA',
+            'INSTAGRAM IPE',
             'GROUP / AKUN INFO LOWONGAN KERJA',
             'INFO DARI KAMPUS',
             'KERABAT',

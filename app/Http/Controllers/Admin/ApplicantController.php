@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\CoreController;
 use App\Jobs\SendTest;
-use App\Jobs\SubmitJob;
+use App\Mail\SubmitEmail;
 use App\Models\AnswerDisc;
 use App\Models\AnswerIq;
 use App\Models\Master\Setting;
@@ -12,9 +12,9 @@ use App\Models\StatusHistory;
 use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Fluent;
-use Illuminate\Support\Str;
 use Log;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -115,7 +115,7 @@ class ApplicantController extends CoreController
                     (object) ['id' => 'LinkedIn', 'text' => 'LinkedIn'],
                     (object) ['id' => 'Loker.id', 'text' => 'Loker.id'],
                     (object) ['id' => 'Indeed', 'text' => 'Indeed'],
-                    (object) ['id' => 'Instagram SCMA', 'text' => 'Instagram SCMA'],
+                    (object) ['id' => 'Instagram IPE', 'text' => 'Instagram IPE'],
                     (object) ['id' => 'Group / Akun Info Lowongan Kerja', 'text' => 'Group / Akun Info Lowongan Kerja'],
                     (object) ['id' => 'Info dari Kampus', 'text' => 'Info dari Kampus'],
                     (object) ['id' => 'Kerabat', 'text' => 'Kerabat'],
@@ -516,7 +516,7 @@ class ApplicantController extends CoreController
             return response()->json(['status' => 'error', 'message' => 'data tidak ditemukan'], 500);
         }
 
-        $password = Str::random(8);
+        $password = '123456789';
         $subject  = getSite('title_email_thank_you');
         $message  = replace_template([
             '[[NAMA_LENGKAP]]' => $data->full_name,
@@ -526,25 +526,30 @@ class ApplicantController extends CoreController
         ], getSite('body_email_thank_you'));
 
         try {
-            $arrayUser = [
-                'email'    => $data->email1,
-                'password' => bcrypt($password),
-                'role_id'  => 3,
-                'status'   => 1,
-                'name'     => $data->email1,
-            ];
+            // $arrayUser = [
+            //     'email'    => $data->email1,
+            //     'password' => bcrypt($password),
+            //     'role_id'  => 3,
+            //     'status'   => 1,
+            //     'name'     => $data->email1,
+            // ];
 
             $store = User::where('email', $data->email1)->first();
             if (! $store) {
-                $store = new User;
+                return ['status' => 'error', 'message' => 'Data pelamar tidak ditemukan'];
+                // $store = new User;
             }
 
-            $store->fill($arrayUser);
-            $store->save();
+            // $store->fill($arrayUser);
+            // $store->save();
 
-            $data->user_id = $store->id;
-            $data->save();
-            dispatch(new SubmitJob($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $data->email1]));
+            // $data->user_id = $store->id;
+            // $data->save();
+            // dispatch(new SubmitJob($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $data->email1]));
+
+            $emailData = new SubmitEmail($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $data->email1]);
+            Mail::to($data->email1)->send($emailData);
+
             return setResultView('Email berhasil terkirim.', url()->previous());
         } catch (\Exception $e) {
             Log::error($e);
@@ -558,7 +563,7 @@ class ApplicantController extends CoreController
         $deadline = date('d/m/Y', strtotime("+{$day} day"));
 
         $personal = PersonalData::find($id);
-        $password = Str::random(8);
+        $password = '123456789';
         $message  = replace_template([
             '[[NAMA_LENGKAP]]' => $personal->full_name,
             '[[POSISI]]'       => $personal->position,
@@ -569,13 +574,10 @@ class ApplicantController extends CoreController
         DB::beginTransaction();
         try {
             $subject = getSite('title_email_online_test');
-            dispatch(new SendTest($subject, 'send-email', [
-                'subject' => $subject,
-                'html'    => $message,
-                'email'   => $personal->email1,
-            ]));
 
-            $user                      = User::where('name', '=', $personal->email1)->first();
+            $emailData = new SubmitEmail($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $personal->email1]);
+            Mail::to($personal->email1)->send($emailData);
+
             $personal->status_test     = 'UNDANGAN TERKIRIM';
             $personal->status_employee = 'TES';
             $personal->save();

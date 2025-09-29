@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Mail\SubmitEmail;
 use App\Models\Master\Careers;
 use App\Models\Master\Setting;
 use App\Models\PersonalData;
@@ -10,9 +11,9 @@ use Auth;
 use DB;
 use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
 use Log;
 
 class GuestController extends Controller
@@ -245,15 +246,15 @@ class GuestController extends Controller
 
     public function createAccountAndSendEmail($data)
     {
-        $password = Str::random(8);
-        // $password = '123456';
-        // $subject = getSite('title_email_thank_you');
-        // $message = replace_template([
-        //     '[[NAMA_LENGKAP]]' => $data->full_name,
-        //     '[[POSISI]]'       => $data->position,
-        //     '[[USERNAME]]'     => $data->email1,
-        //     '[[PASSWORD]]'     => $password,
-        // ], getSite('body_email_thank_you'));
+        // $password = Str::random(8);
+        $password = '123456789';
+        $subject  = getSite('title_email_thank_you');
+        $message  = replace_template([
+            '[[NAMA_LENGKAP]]' => $data->full_name,
+            '[[POSISI]]'       => $data->position,
+            '[[USERNAME]]'     => $data->email1,
+            '[[PASSWORD]]'     => $password,
+        ], getSite('body_email_thank_you'));
 
         try {
             $arrayUser = [
@@ -274,7 +275,12 @@ class GuestController extends Controller
 
             $data->user_id = $store->id;
             $data->save();
-            // dispatch(new SubmitJob($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $data->email1]));
+
+            $emailData = new SubmitEmail($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $data->email1]);
+            Mail::to($data->email1)->send($emailData);
+
+            // new SubmitJob($subject, 'send-email', ['subject' => $subject, 'html' => $message, 'email' => $data->email1]);
+
             return ['status' => 'success', 'user' => $store];
         } catch (\Exception $e) {
             Log::error($e);

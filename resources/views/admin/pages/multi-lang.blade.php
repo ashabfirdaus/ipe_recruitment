@@ -1909,7 +1909,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="col-md-2 control-label">Pengetahuan SCMA</label>
+                    <label class="col-md-2 control-label">Pengetahuan IPE</label>
                     <div class="col-md-5 form-group">
                         <input type="text" name="pengetahuan_scma[en]"
                             value="{{ valLangExist($data, 'pengetahuan_scma', 'en') }}" class="form-control en">
