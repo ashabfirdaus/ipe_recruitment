@@ -284,7 +284,7 @@ class GuestController extends Controller
             return ['status' => 'success', 'user' => $store];
         } catch (\Exception $e) {
             Log::error($e);
-            return ['status' => 'error', 'message' => 'Internal Server Error'];
+            return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
 

@@ -553,7 +553,7 @@ class ApplicantController extends CoreController
             return setResultView('Email berhasil terkirim.', url()->previous());
         } catch (\Exception $e) {
             Log::error($e);
-            return ['status' => 'error', 'message' => 'Terdapat masalah saat buat akun'];
+            return response()->json(['status' => 'error', 'message' => 'Terdapat masalah saat buat akun'], 500);
         }
     }
 
